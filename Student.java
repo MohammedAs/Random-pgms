@@ -1,50 +1,31 @@
 
-public class Student 
-{
-	private int rollNumber;
+public class Student {
+	
 	private String name;
+	private int rollNumber;
 	private String[] courseName;
-	
-	//recommended to use a zero parameter constructor
-	public Student()
-	{
 		
-	}
-	
-	public Student(int rollNumber, String name, String[] courseName)
-	{
-		this.rollNumber=rollNumber;
-		this.name=name;
-		this.courseName=courseName;
-	}
-
-	public int getRollNumber() 
-	{
-		return rollNumber;
-	}
-
-	public void setRollNumber(int rollNumber) 
-	{
-		this.rollNumber = rollNumber;
-	}
-
-	public String getName() 
-	{
+	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) 
-	{
+	public void setName(String name) {
 		this.name = name;
 	}
 	
-	public String[] getCourseName() 
-	{
+	public int getRollNumber() {
+		return rollNumber;
+	}
+	public void setRollNumber(int rollNumber) {
+		this.rollNumber = rollNumber;
+	}
+	
+	public String[] getCourseName() {
 		return courseName;
 	}
-
-	public void setCourseName(String[] courseName) 
-	{
+	public void setCourseName(String[] courseName) {
 		this.courseName = courseName;
 	}
+	
+	
+
 }
