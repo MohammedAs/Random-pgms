@@ -1,0 +1,80 @@
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+
+class SortByDesignation implements Comparator<Employee>
+{
+
+	@Override
+	public int compare(Employee emp1, Employee emp2) {
+		
+		return emp1.getDesignation().compareTo(emp2.getDesignation());
+	}
+	
+}
+class Employee implements Comparable<Employee>
+{
+	private String name;
+	
+	private String designation;
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	public Employee(String name, String designation) {
+		super();
+		this.name = name;
+		this.designation = designation;
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", designation=" + designation + "]";
+	}
+
+	@Override
+	public int compareTo(Employee emp) {
+		System.out.println("comparing "+name+" with "+ emp.name);
+		return name.compareTo(emp.name);
+	}
+	
+	
+}
+public class Test {
+
+	public static void main(String[] args) {
+		LinkedList<Employee> list=new LinkedList<Employee>();
+		
+		list.add(new Employee("B","Tester"));//Integer   compareTo
+		
+		list.add(new Employee("P","Developer"));
+		
+		list.add(new Employee("T","Accountant"));
+		
+		Collections.sort(list);
+		System.out.println("sort by name");
+		System.out.println(list);
+		
+		System.out.println("sort by designation");
+		Collections.sort(list,new SortByDesignation());
+		
+		System.out.println(list);
+	}
+
+}

@@ -1,0 +1,58 @@
+package mypack;
+
+import java.util.HashSet;
+
+class Employee
+{
+	private String name;
+
+	public Employee(String name) {
+		super();
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + "]";
+	}
+
+	@Override
+	public int hashCode()
+	{
+		System.out.println("From hashcode");
+		System.out.println("HashCode value = "+name.hashCode());
+		return name.hashCode();
+	}
+	@Override
+	public boolean equals(Object obj)
+	{
+		System.out.println("From equals");
+		
+		
+		Employee emp=(Employee)obj;
+		System.out.println("Comparing "+name+" with "+emp.name);
+		if(name.equals(emp.name))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	
+}
+public class HashCodeEqualsDemo {
+
+	public static void main(String[] args) {
+		HashSet s=new HashSet();
+		
+		s.add(new Employee("AB"));
+		s.add(new Employee("BA"));
+		System.out.println(s);
+		
+
+	}
+
+}
